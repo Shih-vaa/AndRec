@@ -68,6 +68,22 @@ No analytics. Local logs + user-triggered redacted diagnostics. Optional opt-in 
 **Status:** Proposed
 Recovery guides are versioned data resources with `last_reviewed` dates and source links; never claim automation that does not exist; localisable.
 
+## ADR-014 — Argon2id library and KDF parameter policy
+**Status:** Proposed — needs owner acceptance; parameters need a real low-end device (spike 3 is partial)
+Context: ADR-005 left the Argon2id library and parameters open. Spike 3 (emulator only, see `PLATFORM_CONSTRAINTS.md`) compared BouncyCastle 1.86 (pure Java) with argon2kt 1.6.0 (JNI binding of the reference `phc-winner-argon2`, MIT). Tink 1.24.0 has no Argon2; it stays the AEAD library.
+Decision (proposed):
+- Production Argon2id: **argon2kt**. It was about 4x to 11x faster than BouncyCastle on the emulator, runs outside the Java heap (the heap is the likely constraint on low-end phones), uses threads when p>1, accepts direct ByteBuffers so secrets can be wiped, and its `.so` files are 16 KB aligned.
+- BouncyCastle: **test-only** differential cross-check against argon2kt, and a candidate runtime fallback if the native library fails to load. Both implement the same standard, so output is identical for the same parameters (verified on 3 inputs plus the RFC 9106 vector); switching implementation never invalidates a keyring.
+- Parameters are **calibrated on the device at setup** to a target unlock time, stored with the salt in `keyring.json`, and never below a fixed floor, so a new device reads what the old one wrote. Floor values and target time are **not chosen yet**: they need low-end device data.
+- Tink streaming AEAD template: both `AES256_GCM_HKDF_4KB` and `_1MB` were correct and tamper-evident. `_1MB` was about 3x faster whole-file; `_4KB` allows cheaper ranged reads but costs 0.4% overhead. Leaning `_1MB` for whole-object backup; decide in Phase 2 after a partial-read need is known.
+Alternatives considered: BouncyCastle as production library (not rejected: slower, single-threaded, allocates on the Java heap, larger dependency; it remains the fallback); lazysodium-android (libsodium via JNA; not benchmarked, heavier).
+Risks and open items:
+- argon2kt's last release is 2024-09-06 (repo still receiving pushes in 2026-09); its README says the system `.so` loader fails on some models. Loading failure on a recovery path is serious: test on several devices; decide on the BouncyCastle runtime fallback or ReLinker.
+- Tink 1.24.0 marks `KeysetHandle.generateNew(KeyTemplate)` deprecated; check the replacement before Phase 2.
+- Not measured: real low-end phone, memory pressure, thermal throttling, battery.
+Evidence: spike 3, `docs/spikes/spike3-emulator-2026-10-23.json`, harness in `spikes/crypto`.
+Date / author: 2026-10-23 / Claude Code
+
 ## ADR-013 — Build toolchain and pinned versions
 **Status:** Proposed
 Context: Phase 0 skeleton. Versions were looked up on 2026-10-23 from Google Maven, Maven Central and the Gradle Plugin Portal; stable releases only.

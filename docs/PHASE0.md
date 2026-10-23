@@ -14,7 +14,8 @@ Living checklist for SPEC §16 Phase 0. Updated 2026-10-23. Phase 0 is done only
 | Threat model draft | Draft, unreviewed | `THREATS.md` |
 | Cost model template | Template only, no figures | `COST_MODEL.md` |
 | Remaining modules from the CLAUDE.md layout | Not created on purpose: each is added in the phase that first uses it | — |
-| Spike reports | **0 of 9 run** | `PLATFORM_CONSTRAINTS.md` spike log |
+| Spike reports | **1 of 9 partly run** (spike 3, emulator only) | `PLATFORM_CONSTRAINTS.md` spike log |
+| Spike 3 harness | Throwaway Android app, never shipped | `spikes/crypto` |
 
 ## Spikes: what each one needs before it can run
 
@@ -24,7 +25,7 @@ Nothing below has been started. "Ask" means CLAUDE.md requires the owner's appro
 | --- | --- | --- | --- |
 | 1 | MediaStore enumeration + SHA-256, ≥ 10k files | A throwaway debug-only spike module; `READ_MEDIA_IMAGES`/`READ_MEDIA_VIDEO` in that build; a device with a big library (an emulator will not give honest throughput numbers) | Permission, new module |
 | 2 | SAF traversal, ≥ 50k files, grants survive reboot | Spike module; picker only, no manifest permission | New module |
-| 3 | Tink streaming AEAD + Argon2id on a low-end device | Tink, an Argon2id library (candidates to be researched), a low-end device | **New dependencies** |
+| 3 | Tink streaming AEAD + Argon2id on a low-end device | **Partly done** on the emulator (library comparison, correctness, tamper tests; ADR-014 proposed). Still needs a real low-end Android phone to run `spikes/crypto` and fix KDF parameters. Dependencies approved by the owner for this spike | Owner: which low-end phone? |
 | 4 | Drive authorization, resumable upload, checksums, revoke | Google Cloud project and OAuth client, a Google account, Google auth and Drive client libraries | **Dependencies, account setup** |
 | 5 | All-files access vs picker/SAF strategy | Documentation work plus a draft Play declaration; no code | No |
 | 6 | MediaStore restore preserving dates and paths | Spike module; own-file MediaStore writes (no extra permission expected **[verify]**); emulators across API levels | New module |
@@ -32,7 +33,7 @@ Nothing below has been started. "Ask" means CLAUDE.md requires the owner's appro
 | 8 | Foreground service `dataSync` timeout | Spike module, a foreground-service permission and type declaration; find the documented way to trigger the timeout before relying on one | Permission |
 | 9 | User-initiated data transfer jobs | Read the official docs first, then a small prototype | Permission, maybe |
 
-Proposed next step, if approved: one debug-only `spikes` module for 1, 2, 6, 7, 8 and 9 (platform APIs only, no third-party dependencies), run on the available emulator first and then on real hardware. Spikes 3 and 4 wait on dependency and account decisions.
+The `spikes` parent module now exists with `:spikes:crypto` for spike 3 only. Proposed next step, if approved: add 1, 2, 6, 7, 8 and 9 as further debug-only modules under `spikes/` (platform APIs only, no third-party dependencies), run on the emulator first and then on real hardware. Spike 4 waits for the owner to set up the Google Cloud project when asked.
 
 ## Environment notes (2026-10-23)
 
