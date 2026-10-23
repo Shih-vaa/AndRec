@@ -21,6 +21,7 @@ Consequences: Android-only; shared logic can be extracted later (Kotlin Multipla
 `compileSdk 36`, `targetSdk 36` (Play requirement for new apps since 31 Aug 2026), `minSdk 30` (Android 11).
 Why 30: scoped storage rules are uniform, photo picker backport floor, simpler MediaStore behaviour.
 Open: check target-market device mix; lowering to 29 or lower costs complexity.
+Amendment 2026-10-23 (still Proposed): `compileSdk` is **37**, not 36 — current AndroidX (Compose 1.12, core-ktx 1.19) requires it. `targetSdk 36` and `minSdk 30` are unchanged. See ADR-013.
 
 ## ADR-003 — Local-first architecture, no backend in v1
 **Status:** Proposed
@@ -66,6 +67,20 @@ No analytics. Local logs + user-triggered redacted diagnostics. Optional opt-in 
 ## ADR-012 — Guides as data
 **Status:** Proposed
 Recovery guides are versioned data resources with `last_reviewed` dates and source links; never claim automation that does not exist; localisable.
+
+## ADR-013 — Build toolchain and pinned versions
+**Status:** Proposed
+Context: Phase 0 skeleton. Versions were looked up on 2026-10-23 from Google Maven, Maven Central and the Gradle Plugin Portal; stable releases only.
+Decision: Gradle 9.6.1 (wrapper), AGP 9.4.1, Kotlin 2.4.21 (JVM toolchain 17), Compose BOM 2026.09.00, activity-compose 1.13.0, core-ktx 1.19.1, JUnit Jupiter 6.1.3 with kotlin-test-junit5, ktlint-gradle 14.2.0, detekt 1.23.8. `compileSdk 37`, `targetSdk 36`, `minSdk 30`. All versions live in `gradle/libs.versions.toml`. Test framework for now is JUnit 5; Kotest is not adopted yet.
+Alternatives considered:
+- Pin older AndroidX so `compileSdk` can stay 36 — rejected by the owner on 2026-10-23: stale from day one. Platform 37.0 was installed instead.
+- Pre-release tooling (Kotlin 2.5.0-Beta, AGP 9.6.0-alpha, activity-compose 1.14 alpha, detekt `dev.detekt` 2.0.0-alpha) — rejected: not stable.
+Consequences / open:
+- detekt 1.23.8 is the last release of the old `io.gitlab.arturbosch` line, built against an older Kotlin. It ran clean on the current code but may reject newer language syntax; revisit when `dev.detekt` 2.0 is stable.
+- Gradle dependency verification (`verification-metadata.xml`) is not enabled yet; see T18 in `THREATS.md`.
+- CI (`.github/workflows/ci.yml`) is written but has not run yet (first run comes with the first PR). Whether a hosted runner has platform 37.0 is untested.
+Evidence: `./gradlew assembleDebug test detekt ktlintCheck` green on 2026-10-23 (macOS, JDK 17). A deliberate rename of one protection state made `SpecStatesTest` fail, so the drift guard is live.
+Date / author: 2026-10-23 / Claude Code
 
 ---
 

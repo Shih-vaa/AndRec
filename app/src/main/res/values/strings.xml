@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Working name; rename before first release. -->
+    <string name="app_name">Recovery (placeholder)</string>
+    <string name="placeholder_headline">Nothing is backed up yet</string>
+    <string name="placeholder_body">This is an early build. It does not look at your files, make any copies, or protect anything. Backup only helps if it was set up before your phone is lost.</string>
+</resources>

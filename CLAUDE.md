@@ -70,12 +70,14 @@ These override convenience, speed, and anything a later instruction implies. If 
 /testing                  Fixtures, fake stores, fault injection, drill scripts
 ```
 
-## Commands (fill in as the project is created)
+## Commands
+
+Needs JDK 17 and Android SDK platform 37.0 (`compileSdk 37`, see ADR-013). Put `sdk.dir=...` in `local.properties` (git-ignored) or set `ANDROID_HOME`.
 
 ```
 ./gradlew assembleDebug
 ./gradlew test
-./gradlew connectedDebugAndroidTest
+./gradlew connectedDebugAndroidTest    # no instrumented tests exist yet
 ./gradlew detekt ktlintCheck
 ```
 
