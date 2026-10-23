@@ -1,0 +1,151 @@
+{
+  "device": {
+    "model": "sdk_gphone16k_arm64",
+    "sdk": 37,
+    "abis": "arm64-v8a",
+    "cores": 4,
+    "totalRamMiB": 3967,
+    "memoryClassMiB": 192,
+    "largeMemoryClassMiB": 576,
+    "javaHeapMaxMiB": 192,
+    "isEmulator": true
+  },
+  "checks": {
+    "rfc9106VectorBouncyCastle": true,
+    "bouncyCastleAgreesWithArgon2kt": true
+  },
+  "argon2id": [
+    {
+      "impl": "argon2kt-1.6.0-native",
+      "params": "m=19456KiB,t=2,p=1",
+      "runsMs": "[24, 19, 19]",
+      "medianMs": 19,
+      "error": "none"
+    },
+    {
+      "impl": "argon2kt-1.6.0-native",
+      "params": "m=47104KiB,t=1,p=1",
+      "runsMs": "[35, 26, 30]",
+      "medianMs": 30,
+      "error": "none"
+    },
+    {
+      "impl": "argon2kt-1.6.0-native",
+      "params": "m=65536KiB,t=3,p=1",
+      "runsMs": "[111, 119, 118]",
+      "medianMs": 118,
+      "error": "none"
+    },
+    {
+      "impl": "argon2kt-1.6.0-native",
+      "params": "m=65536KiB,t=3,p=4",
+      "runsMs": "[46, 44, 38]",
+      "medianMs": 44,
+      "error": "none"
+    },
+    {
+      "impl": "argon2kt-1.6.0-native",
+      "params": "m=131072KiB,t=3,p=4",
+      "runsMs": "[98, 88, 96]",
+      "medianMs": 96,
+      "error": "none"
+    },
+    {
+      "impl": "bouncycastle-1.86-pure-java",
+      "params": "m=19456KiB,t=2,p=1",
+      "runsMs": "[152, 141, 126]",
+      "medianMs": 141,
+      "error": "none"
+    },
+    {
+      "impl": "bouncycastle-1.86-pure-java",
+      "params": "m=47104KiB,t=1,p=1",
+      "runsMs": "[145, 134, 154]",
+      "medianMs": 145,
+      "error": "none"
+    },
+    {
+      "impl": "bouncycastle-1.86-pure-java",
+      "params": "m=65536KiB,t=3,p=1",
+      "runsMs": "[519, 513, 486]",
+      "medianMs": 513,
+      "error": "none"
+    },
+    {
+      "impl": "bouncycastle-1.86-pure-java",
+      "params": "m=65536KiB,t=3,p=4",
+      "runsMs": "[525, 499, 485]",
+      "medianMs": 499,
+      "error": "none"
+    },
+    {
+      "impl": "bouncycastle-1.86-pure-java",
+      "params": "m=131072KiB,t=3,p=4",
+      "runsMs": "[999, 1000, 984]",
+      "medianMs": 999,
+      "error": "none"
+    }
+  ],
+  "tinkStreamingAead": [
+    {
+      "template": "AES256_GCM_HKDF_4KB",
+      "plainMiB": 64,
+      "encryptMs": 243,
+      "decryptMs": 226,
+      "encryptMiBps": 263.3744855967078,
+      "decryptMiBps": 283.1858407079646,
+      "overheadBytes": 263224,
+      "roundTripHashMatches": true,
+      "untamperedAccepted": true,
+      "bitFlipRejected": true,
+      "truncationRejected": true,
+      "wrongAssociatedDataRejected": true,
+      "pass": 1
+    },
+    {
+      "template": "AES256_GCM_HKDF_1MB",
+      "plainMiB": 64,
+      "encryptMs": 47,
+      "decryptMs": 69,
+      "encryptMiBps": 1361.7021276595744,
+      "decryptMiBps": 927.536231884058,
+      "overheadBytes": 1080,
+      "roundTripHashMatches": true,
+      "untamperedAccepted": true,
+      "bitFlipRejected": true,
+      "truncationRejected": true,
+      "wrongAssociatedDataRejected": true,
+      "pass": 1
+    },
+    {
+      "template": "AES256_GCM_HKDF_4KB",
+      "plainMiB": 64,
+      "encryptMs": 222,
+      "decryptMs": 205,
+      "encryptMiBps": 288.2882882882883,
+      "decryptMiBps": 312.1951219512195,
+      "overheadBytes": 263224,
+      "roundTripHashMatches": true,
+      "untamperedAccepted": true,
+      "bitFlipRejected": true,
+      "truncationRejected": true,
+      "wrongAssociatedDataRejected": true,
+      "pass": 2
+    },
+    {
+      "template": "AES256_GCM_HKDF_1MB",
+      "plainMiB": 64,
+      "encryptMs": 47,
+      "decryptMs": 70,
+      "encryptMiBps": 1361.7021276595744,
+      "decryptMiBps": 914.2857142857143,
+      "overheadBytes": 1080,
+      "roundTripHashMatches": true,
+      "untamperedAccepted": true,
+      "bitFlipRejected": true,
+      "truncationRejected": true,
+      "wrongAssociatedDataRejected": true,
+      "pass": 2
+    }
+  ]
+}

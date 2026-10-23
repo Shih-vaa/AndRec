@@ -92,7 +92,7 @@ Status legend: **Verified** = read in official docs; **Secondary** = from third-
 | --- | --- | --- | --- | --- | --- |
 | 1 | MediaStore enumeration + hashing performance | | | | |
 | 2 | SAF traversal performance + persisted grants | | | | |
-| 3 | Tink + Argon2id on low-end device | | | | |
+| 3 | Tink + Argon2id on low-end device | 2026-10-23 | **Emulator only**: `sdk_gphone16k_arm64`, Android 37, 16 KB pages, 4 cores, 4 GB RAM, Java heap 192 MiB, on an Apple-silicon host. **Not a low-end device.** | **Partial.** Correctness: BouncyCastle 1.86 passes the RFC 9106 §5.3 Argon2id vector and argon2kt 1.6.0 agrees with it on 3 further inputs. argon2kt is 16 KB aligned (ELF LOAD align 0x4000) and loaded on a 16 KB-page device. Speed (median of 3): argon2kt 19 ms at 19 MiB/t2/p1, 118 ms at 64 MiB/t3/p1, 44 ms at 64 MiB/t3/p4, 96 ms at 128 MiB/t3/p4; BouncyCastle 141 / 513 / 499 / 999 ms (single-threaded: p=4 does not help). No OOM at 128 MiB, but the emulator's 192 MiB Java heap is generous. Tink streaming AEAD (64 MiB file, second pass): `AES256_GCM_HKDF_4KB` 288 MiB/s encrypt, 312 decrypt, 263,224 B overhead; `AES256_GCM_HKDF_1MB` 1362 / 914 MiB/s, 1,080 B overhead. Bit flip, last-segment truncation and wrong associated data are all rejected on both templates. **Still open:** timings and memory limits on a real low-end phone, and therefore the final KDF parameters. Raw data: `docs/spikes/spike3-emulator-2026-10-23.json`. | ADR-005 (open item: Argon2id library), ADR-014 |
 | 4 | Drive authorization, resumable upload, checksums, revoke behaviour | | | | |
 | 5 | All-files vs picker strategy; Play declaration outcome | | | | |
 | 6 | MediaStore restore with dates/paths | | | | |
