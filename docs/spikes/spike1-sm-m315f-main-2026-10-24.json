@@ -1,0 +1,90 @@
+{
+"device": {
+"model": "SM-M315F",
+"sdk": 31,
+"cores": 8,
+"javaHeapMaxMiB": 256
+},
+"batteryBefore": {
+"levelPercent": 86,
+"tempTenthsC": 326,
+"pluggedFlag": 0
+},
+"batteryAfter": {
+"levelPercent": 85,
+"tempTenthsC": 336,
+"pluggedFlag": 0
+},
+"totalRunSeconds": 215,
+"syntheticFiles": 10835,
+"syntheticMiB": 5103,
+"enumeration": [
+{
+"method": "single-cursor",
+"rowsTotal": 13396,
+"rowsSynthetic": 10835,
+"runsMs": "[1153, 439, 293]",
+"medianMs": 439,
+"rowsPerSecondMedian": 30514.806378132118
+},
+{
+"method": "keyset-batches-of-1000",
+"rowsTotal": 13396,
+"rowsSynthetic": 10835,
+"runsMs": "[693, 491, 546]",
+"medianMs": 546,
+"rowsPerSecondMedian": 24534.798534798534
+}
+],
+"hashing": [
+{
+"label": "set A, first read",
+"threads": 1,
+"files": 3612,
+"MiB": 1730.0626411437988,
+"ms": 73969,
+"MiBps": 23.389022984544862,
+"filesPerSecond": 48.83126715245576,
+"peakJavaHeapMiB": 37,
+"peakNativeHeapMiB": 13,
+"errors": {}
+},
+{
+"label": "set B, first read",
+"threads": 2,
+"files": 3612,
+"MiB": 1681.1633129119873,
+"ms": 36799,
+"MiBps": 45.685027117910465,
+"filesPerSecond": 98.15484116416206,
+"peakJavaHeapMiB": 11,
+"peakNativeHeapMiB": 13,
+"errors": {}
+},
+{
+"label": "set C, first read",
+"threads": 4,
+"files": 3611,
+"MiB": 1691.9728240966797,
+"ms": 18978,
+"MiBps": 89.15443271665505,
+"filesPerSecond": 190.27294762356414,
+"peakJavaHeapMiB": 14,
+"peakNativeHeapMiB": 13,
+"errors": {}
+},
+{
+"label": "set A, second read (page cache likely warm)",
+"threads": 1,
+"files": 3612,
+"MiB": 1730.0626411437988,
+"ms": 81980,
+"MiBps": 21.103472080309817,
+"filesPerSecond": 44.05952671383264,
+"peakJavaHeapMiB": 17,
+"peakNativeHeapMiB": 13,
+"errors": {}
+}
+],
+"totalPssMiBAtEnd": 53
+}

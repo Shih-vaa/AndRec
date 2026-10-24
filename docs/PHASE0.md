@@ -14,7 +14,7 @@ Living checklist for SPEC §16 Phase 0. Updated 2026-10-23. Phase 0 is done only
 | Threat model draft | Draft, unreviewed | `THREATS.md` |
 | Cost model template | Template only, no figures | `COST_MODEL.md` |
 | Remaining modules from the CLAUDE.md layout | Not created on purpose: each is added in the phase that first uses it | — |
-| Spike reports | **2 of 9 run**: spike 3 (emulator and one real phone), spike 5 (research only) | `PLATFORM_CONSTRAINTS.md` spike log |
+| Spike reports | **3 of 9 run**: spike 1 (one real phone), spike 3 (emulator and one real phone), spike 5 (research only) | `PLATFORM_CONSTRAINTS.md` spike log |
 | Spike 3 harness | Throwaway Android app, never shipped | `spikes/crypto` |
 
 ## Spikes: what each one needs before it can run
@@ -23,7 +23,7 @@ Nothing below has been started. "Ask" means CLAUDE.md requires the owner's appro
 
 | # | Spike | Needs | Ask? |
 | --- | --- | --- | --- |
-| 1 | MediaStore enumeration + SHA-256, ≥ 10k files | A throwaway debug-only spike module; `READ_MEDIA_IMAGES`/`READ_MEDIA_VIDEO` in that build; a device with a big library (an emulator will not give honest throughput numbers) | Permission, new module |
+| 1 | MediaStore enumeration + SHA-256, ≥ 10k files | **Done on the Galaxy M31** (`spikes/mediastore`, `docs/spikes/spike1-mediastore.md`); permissions approved in ADR-015. Not yet run on Android 13+ (`READ_MEDIA_*`) or a second device | — |
 | 2 | SAF traversal, ≥ 50k files, grants survive reboot | Spike module; picker only, no manifest permission | New module |
 | 3 | Tink streaming AEAD + Argon2id on a low-end device | **Done for library choice** on the emulator and a real Galaxy M31 (mid-range) over wireless debugging; ADR-014 proposed. KDF parameter floor stays provisional until a ≤ 3 GB RAM phone is measured. Dependencies approved by the owner for this spike | Owner: accept ADR-014? Another, weaker phone? |
 | 4 | Drive authorization, resumable upload, checksums, revoke | Google Cloud project and OAuth client, a Google account, Google auth and Drive client libraries | **Dependencies, account setup** |
@@ -33,7 +33,7 @@ Nothing below has been started. "Ask" means CLAUDE.md requires the owner's appro
 | 8 | Foreground service `dataSync` timeout | Spike module, a foreground-service permission and type declaration; find the documented way to trigger the timeout before relying on one | Permission |
 | 9 | User-initiated data transfer jobs | Read the official docs first, then a small prototype | Permission, maybe |
 
-The `spikes` parent module now exists with `:spikes:crypto` for spike 3 only. Proposed next step, if approved: add 1, 2, 6, 7, 8 and 9 as further debug-only modules under `spikes/` (platform APIs only, no third-party dependencies), run on the emulator first and then on real hardware. Spike 4 waits for the owner to set up the Google Cloud project when asked.
+The `spikes` parent module now holds `:spikes:crypto` (spike 3) and `:spikes:mediastore` (spike 1). Proposed next step, if approved: add 2, 6, 7, 8 and 9 as further debug-only modules under `spikes/` (platform APIs only, no third-party dependencies), run on the emulator first and then on real hardware. Spike 4 waits for the owner to set up the Google Cloud project when asked.
 
 ## Environment notes (2026-10-23)
 

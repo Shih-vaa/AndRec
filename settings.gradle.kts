@@ -31,3 +31,4 @@ rootProject.name = "recovery-app"
 include(":app")
 include(":core:model")
 include(":spikes:crypto")
+include(":spikes:mediastore")

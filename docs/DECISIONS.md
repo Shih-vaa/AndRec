@@ -69,6 +69,15 @@ No analytics. Local logs + user-triggered redacted diagnostics. Optional opt-in 
 **Status:** Proposed
 Recovery guides are versioned data resources with `last_reviewed` dates and source links; never claim automation that does not exist; localisable.
 
+## ADR-015 — Spike-only permissions in debug builds
+**Status:** Accepted (owner approval in chat, 2026-10-24)
+Context: CLAUDE.md requires approval and an ADR for every new permission. Spike 1 (and later spike harnesses) must read MediaStore, which needs media permissions. Spike 5 recommends the same permissions for the product, but that is a separate decision (ADR-007, still Proposed).
+Decision: the owner approved `READ_MEDIA_IMAGES`, `READ_MEDIA_VIDEO` and `READ_EXTERNAL_STORAGE` with `maxSdkVersion="32"`, **only in the debug source set of throwaway modules under `spikes/`**. The production `:app` manifest declares no permissions and must not gain any through this ADR. Spike modules are never shipped, use no third-party dependencies unless a separate ADR says otherwise, and keep no file names or hashes in logs.
+Alternatives considered: photo picker only (cannot enumerate a library, so it cannot measure the thing the spike measures).
+Consequences: any further permission (for example `READ_MEDIA_VISUAL_USER_SELECTED`, a foreground-service permission for spike 8) needs its own approval.
+Evidence: `spikes/mediastore/src/debug/AndroidManifest.xml`; `aapt2 dump permissions` on the built APK lists exactly these three.
+Date / author: 2026-10-24 / Claude Code, approved by the owner
+
 ## ADR-014 — Argon2id library and KDF parameter policy
 **Status:** Proposed — needs owner acceptance. Library choice is backed by a real phone (Galaxy M31, mid-range); the parameter floor is provisional until a ≤ 3 GB RAM phone is measured.
 Context: ADR-005 left the Argon2id library and parameters open. Spike 3 (emulator only, see `PLATFORM_CONSTRAINTS.md`) compared BouncyCastle 1.86 (pure Java) with argon2kt 1.6.0 (JNI binding of the reference `phc-winner-argon2`, MIT). Tink 1.24.0 has no Argon2; it stays the AEAD library.
