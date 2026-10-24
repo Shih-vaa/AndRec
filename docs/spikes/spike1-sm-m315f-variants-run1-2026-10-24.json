@@ -1,0 +1,36 @@
+{
+"variants": [
+{
+"label": "cpu-only sha256, no I\/O",
+"MiB": 256,
+"ms": 250,
+"MiBps": 1024
+},
+{
+"label": "read only via openInputStream, 1 thread",
+"files": 600,
+"MiB": 265.9730167388916,
+"ms": 9198,
+"MiBps": 28.91639668829002
+},
+{
+"label": "hash via openInputStream, 1 thread",
+"threads": 1,
+"files": 600,
+"MiB": 265.9730167388916,
+"ms": 9714,
+"MiBps": 27.380380557843484,
+"filesPerSecond": 61.76652254478073,
+"peakJavaHeapMiB": 5,
+"peakNativeHeapMiB": 14,
+"errors": {}
+},
+{
+"label": "hash via openFileDescriptor, 1 thread",
+"files": 600,
+"MiB": 265.9730167388916,
+"ms": 9249,
+"MiBps": 28.75694850674577
+}
+]
+}
