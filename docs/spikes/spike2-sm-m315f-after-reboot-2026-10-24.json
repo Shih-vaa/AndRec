@@ -1,0 +1,17 @@
+{
+"check": {
+"persistedGrantCount": 1,
+"savedUriStillListed": true,
+"savedUriReadFlag": true,
+"savedUriWriteFlag": true,
+"rootListing": "ok",
+"rootChildren": 100
+},
+"env": {
+"bootCount": 86,
+"uptimeMinutes": 3,
+"model": "SM-M315F",
+"sdk": 31
+},
+"mode": "check"
+}

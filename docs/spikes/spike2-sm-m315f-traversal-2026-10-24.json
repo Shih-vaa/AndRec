@@ -1,0 +1,63 @@
+{
+"env": {
+"bootCount": 85,
+"uptimeMinutes": 1789,
+"model": "SM-M315F",
+"sdk": 31
+},
+"batteryBefore": {
+"levelPercent": 67,
+"tempTenthsC": 338
+},
+"batteryAfter": {
+"levelPercent": 66,
+"tempTenthsC": 331
+},
+"peakJavaHeapMiB": 14,
+"javaHeapMaxMiB": 256,
+"totalPssMiB": 69,
+"bulkRuns": [
+{
+"ms": 229747,
+"files": 50000,
+"dirs": 200,
+"filesPerSecond": 217.6306981157534
+}
+],
+"perProperty": {
+"method": "per-property queries (DocumentFile-style, hand simulation)",
+"files": 2000,
+"queries": 8217,
+"ms": 118916,
+"filesPerSecond": 16.818594638232028
+},
+"openRead": [
+{
+"label": "open+read 1 thread",
+"threads": 1,
+"files": 1000,
+"KiB": 1000,
+"ms": 56044,
+"filesPerSecond": 17.84312326029548,
+"errors": {}
+},
+{
+"label": "open+read 4 threads",
+"threads": 4,
+"files": 1000,
+"KiB": 1000,
+"ms": 11469,
+"filesPerSecond": 87.19155985700584,
+"errors": {}
+}
+],
+"check": {
+"persistedGrantCount": 1,
+"savedUriStillListed": true,
+"savedUriReadFlag": true,
+"savedUriWriteFlag": true,
+"rootListing": "ok",
+"rootChildren": 100
+},
+"mode": "traverse"
+}
