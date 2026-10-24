@@ -47,6 +47,7 @@ Room/SQLite with immutable snapshots and `asset_version` validity ranges (`first
 **Status:** Proposed — depends on spike 5
 Default design: `MediaStoreAdapter` + `SafTreeAdapter` (works without special approval for picked folders). Optionally `AllFilesAdapter` if Play approves `MANAGE_EXTERNAL_STORAGE` for backup/restore. Photo/video broad permissions require a declaration; the picker is the fallback.
 Consequence: if not approved, protected scope is "what the user explicitly selects"; UI must say so.
+Evidence (spike 5, 2026-10-24, still Proposed): the all-files policy rejects "media files access" as a justification, and the photo/video policy does not name backup apps. Proposed refinement: build for `READ_MEDIA_IMAGES`/`VIDEO` (with partial-access handling) plus SAF trees; keep picker-only working as the floor; do **not** request `MANAGE_EXTERNAL_STORAGE` in v1; report the `Download` root as not covered. Adding any of these permissions needs owner approval. Detail: `docs/spikes/spike5-permission-strategy.md`.
 
 ## ADR-008 — SMS and call log
 **Status:** Proposed

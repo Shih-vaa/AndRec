@@ -14,7 +14,7 @@ Living checklist for SPEC §16 Phase 0. Updated 2026-10-23. Phase 0 is done only
 | Threat model draft | Draft, unreviewed | `THREATS.md` |
 | Cost model template | Template only, no figures | `COST_MODEL.md` |
 | Remaining modules from the CLAUDE.md layout | Not created on purpose: each is added in the phase that first uses it | — |
-| Spike reports | **1 of 9 mostly run** (spike 3: emulator and one real phone) | `PLATFORM_CONSTRAINTS.md` spike log |
+| Spike reports | **2 of 9 run**: spike 3 (emulator and one real phone), spike 5 (research only) | `PLATFORM_CONSTRAINTS.md` spike log |
 | Spike 3 harness | Throwaway Android app, never shipped | `spikes/crypto` |
 
 ## Spikes: what each one needs before it can run
@@ -27,7 +27,7 @@ Nothing below has been started. "Ask" means CLAUDE.md requires the owner's appro
 | 2 | SAF traversal, ≥ 50k files, grants survive reboot | Spike module; picker only, no manifest permission | New module |
 | 3 | Tink streaming AEAD + Argon2id on a low-end device | **Done for library choice** on the emulator and a real Galaxy M31 (mid-range) over wireless debugging; ADR-014 proposed. KDF parameter floor stays provisional until a ≤ 3 GB RAM phone is measured. Dependencies approved by the owner for this spike | Owner: accept ADR-014? Another, weaker phone? |
 | 4 | Drive authorization, resumable upload, checksums, revoke | Google Cloud project and OAuth client, a Google account, Google auth and Drive client libraries | **Dependencies, account setup** |
-| 5 | All-files access vs picker/SAF strategy | Documentation work plus a draft Play declaration; no code | No |
+| 5 | All-files access vs picker/SAF strategy | **Research done** (`docs/spikes/spike5-permission-strategy.md`); Play declaration drafted, **not submitted**, so approval is unknown | Owner: accept the ADR-007 refinement? When to submit? |
 | 6 | MediaStore restore preserving dates and paths | Spike module; own-file MediaStore writes (no extra permission expected **[verify]**); emulators across API levels | New module |
 | 7 | Keystore + Auto Backup on device loss | Two devices or emulators, a backup/restore run; decides `allowBackup` | New module |
 | 8 | Foreground service `dataSync` timeout | Spike module, a foreground-service permission and type declaration; find the documented way to trigger the timeout before relying on one | Permission |
