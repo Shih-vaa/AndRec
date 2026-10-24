@@ -1,0 +1,151 @@
+{
+"device": {
+"model": "SM-M315F",
+"sdk": 31,
+"abis": "arm64-v8a, armeabi-v7a, armeabi",
+"cores": 8,
+"totalRamMiB": 5572,
+"memoryClassMiB": 256,
+"largeMemoryClassMiB": 512,
+"javaHeapMaxMiB": 256,
+"isEmulator": false
+},
+"checks": {
+"rfc9106VectorBouncyCastle": true,
+"bouncyCastleAgreesWithArgon2kt": true
+},
+"argon2id": [
+{
+"impl": "argon2kt-1.6.0-native",
+"params": "m=19456KiB,t=2,p=1",
+"runsMs": "[94, 81, 82]",
+"medianMs": 82,
+"error": "none"
+},
+{
+"impl": "argon2kt-1.6.0-native",
+"params": "m=47104KiB,t=1,p=1",
+"runsMs": "[135, 102, 103]",
+"medianMs": 103,
+"error": "none"
+},
+{
+"impl": "argon2kt-1.6.0-native",
+"params": "m=65536KiB,t=3,p=1",
+"runsMs": "[474, 432, 459]",
+"medianMs": 459,
+"error": "none"
+},
+{
+"impl": "argon2kt-1.6.0-native",
+"params": "m=65536KiB,t=3,p=4",
+"runsMs": "[355, 378, 358]",
+"medianMs": 358,
+"error": "none"
+},
+{
+"impl": "argon2kt-1.6.0-native",
+"params": "m=131072KiB,t=3,p=4",
+"runsMs": "[653, 698, 756]",
+"medianMs": 698,
+"error": "none"
+},
+{
+"impl": "bouncycastle-1.86-pure-java",
+"params": "m=19456KiB,t=2,p=1",
+"runsMs": "[761, 680, 664]",
+"medianMs": 680,
+"error": "none"
+},
+{
+"impl": "bouncycastle-1.86-pure-java",
+"params": "m=47104KiB,t=1,p=1",
+"runsMs": "[840, 731, 753]",
+"medianMs": 753,
+"error": "none"
+},
+{
+"impl": "bouncycastle-1.86-pure-java",
+"params": "m=65536KiB,t=3,p=1",
+"runsMs": "[2712, 2680, 2718]",
+"medianMs": 2712,
+"error": "none"
+},
+{
+"impl": "bouncycastle-1.86-pure-java",
+"params": "m=65536KiB,t=3,p=4",
+"runsMs": "[2699, 2752, 2742]",
+"medianMs": 2742,
+"error": "none"
+},
+{
+"impl": "bouncycastle-1.86-pure-java",
+"params": "m=131072KiB,t=3,p=4",
+"runsMs": "[5369, 5344, 5404]",
+"medianMs": 5369,
+"error": "none"
+}
+],
+"tinkStreamingAead": [
+{
+"template": "AES256_GCM_HKDF_4KB",
+"plainMiB": 64,
+"encryptMs": 3346,
+"decryptMs": 2351,
+"encryptMiBps": 19.127316198445907,
+"decryptMiBps": 27.222458528285834,
+"overheadBytes": 263224,
+"roundTripHashMatches": true,
+"untamperedAccepted": true,
+"bitFlipRejected": true,
+"truncationRejected": true,
+"wrongAssociatedDataRejected": true,
+"pass": 1
+},
+{
+"template": "AES256_GCM_HKDF_1MB",
+"plainMiB": 64,
+"encryptMs": 527,
+"decryptMs": 500,
+"encryptMiBps": 121.44212523719165,
+"decryptMiBps": 128,
+"overheadBytes": 1080,
+"roundTripHashMatches": true,
+"untamperedAccepted": true,
+"bitFlipRejected": true,
+"truncationRejected": true,
+"wrongAssociatedDataRejected": true,
+"pass": 1
+},
+{
+"template": "AES256_GCM_HKDF_4KB",
+"plainMiB": 64,
+"encryptMs": 2887,
+"decryptMs": 2460,
+"encryptMiBps": 22.16834083824039,
+"decryptMiBps": 26.016260162601625,
+"overheadBytes": 263224,
+"roundTripHashMatches": true,
+"untamperedAccepted": true,
+"bitFlipRejected": true,
+"truncationRejected": true,
+"wrongAssociatedDataRejected": true,
+"pass": 2
+},
+{
+"template": "AES256_GCM_HKDF_1MB",
+"plainMiB": 64,
+"encryptMs": 562,
+"decryptMs": 520,
+"encryptMiBps": 113.87900355871886,
+"decryptMiBps": 123.07692307692308,
+"overheadBytes": 1080,
+"roundTripHashMatches": true,
+"untamperedAccepted": true,
+"bitFlipRejected": true,
+"truncationRejected": true,
+"wrongAssociatedDataRejected": true,
+"pass": 2
+}
+]
+}
