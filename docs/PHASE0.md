@@ -14,7 +14,7 @@ Living checklist for SPEC §16 Phase 0. Updated 2026-10-23. Phase 0 is done only
 | Threat model draft | Draft, unreviewed | `THREATS.md` |
 | Cost model template | Template only, no figures | `COST_MODEL.md` |
 | Remaining modules from the CLAUDE.md layout | Not created on purpose: each is added in the phase that first uses it | — |
-| Spike reports | **1 of 9 partly run** (spike 3, emulator only) | `PLATFORM_CONSTRAINTS.md` spike log |
+| Spike reports | **1 of 9 mostly run** (spike 3: emulator and one real phone) | `PLATFORM_CONSTRAINTS.md` spike log |
 | Spike 3 harness | Throwaway Android app, never shipped | `spikes/crypto` |
 
 ## Spikes: what each one needs before it can run
@@ -25,7 +25,7 @@ Nothing below has been started. "Ask" means CLAUDE.md requires the owner's appro
 | --- | --- | --- | --- |
 | 1 | MediaStore enumeration + SHA-256, ≥ 10k files | A throwaway debug-only spike module; `READ_MEDIA_IMAGES`/`READ_MEDIA_VIDEO` in that build; a device with a big library (an emulator will not give honest throughput numbers) | Permission, new module |
 | 2 | SAF traversal, ≥ 50k files, grants survive reboot | Spike module; picker only, no manifest permission | New module |
-| 3 | Tink streaming AEAD + Argon2id on a low-end device | **Partly done** on the emulator (library comparison, correctness, tamper tests; ADR-014 proposed). Still needs a real low-end Android phone to run `spikes/crypto` and fix KDF parameters. Dependencies approved by the owner for this spike | Owner: which low-end phone? |
+| 3 | Tink streaming AEAD + Argon2id on a low-end device | **Done for library choice** on the emulator and a real Galaxy M31 (mid-range) over wireless debugging; ADR-014 proposed. KDF parameter floor stays provisional until a ≤ 3 GB RAM phone is measured. Dependencies approved by the owner for this spike | Owner: accept ADR-014? Another, weaker phone? |
 | 4 | Drive authorization, resumable upload, checksums, revoke | Google Cloud project and OAuth client, a Google account, Google auth and Drive client libraries | **Dependencies, account setup** |
 | 5 | All-files access vs picker/SAF strategy | Documentation work plus a draft Play declaration; no code | No |
 | 6 | MediaStore restore preserving dates and paths | Spike module; own-file MediaStore writes (no extra permission expected **[verify]**); emulators across API levels | New module |
