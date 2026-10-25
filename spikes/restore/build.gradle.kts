@@ -1,0 +1,24 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+// Throwaway spike 6 harness (restore into MediaStore and SAF with names, paths and dates).
+// Never shipped; no permissions, no dependencies. Personal sample media is read from the app's own
+// external files folder at run time and is never packaged or committed.
+android {
+    namespace = "app.recovery.placeholder.spike.restore"
+    compileSdk = 37
+
+    defaultConfig {
+        applicationId = "app.recovery.placeholder.spike.restore"
+        minSdk = 30
+        targetSdk = 36
+        versionCode = 1
+        versionName = "0.0.1"
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+}

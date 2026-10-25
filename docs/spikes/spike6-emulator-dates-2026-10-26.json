@@ -1,0 +1,362 @@
+{
+"wanted": "2019-07-14 10:30:00Z",
+"results": [
+{
+"strategy": "A exif-original-only, no dates set",
+"whilePendingAfterInsert": {
+"taken": null,
+"modified": "1970-01-01 00:00:00Z",
+"added": "2026-10-25 19:06:11Z",
+"pending": 1,
+"fileMtime": "1970-01-01 00:00:00Z"
+},
+"clearedImmediately": {
+"taken": null,
+"modified": "2026-10-25 19:06:12Z",
+"added": "2026-10-25 19:06:11Z",
+"pending": 0,
+"fileMtime": "2026-10-25 19:06:12Z"
+},
+"clearedAfter4s": {
+"taken": null,
+"modified": "2026-10-25 19:06:12Z",
+"added": "2026-10-25 19:06:11Z",
+"pending": 0,
+"fileMtime": "2026-10-25 19:06:12Z"
+}
+},
+{
+"strategy": "B exif DateTime+Original, no dates set",
+"whilePendingAfterInsert": {
+"taken": null,
+"modified": "1970-01-01 00:00:00Z",
+"added": "2026-10-25 19:06:16Z",
+"pending": 1,
+"fileMtime": "1970-01-01 00:00:00Z"
+},
+"clearedImmediately": {
+"taken": null,
+"modified": "2026-10-25 19:06:16Z",
+"added": "2026-10-25 19:06:16Z",
+"pending": 0,
+"fileMtime": "2026-10-25 19:06:16Z"
+},
+"clearedAfter4s": {
+"taken": null,
+"modified": "2026-10-25 19:06:16Z",
+"added": "2026-10-25 19:06:16Z",
+"pending": 0,
+"fileMtime": "2026-10-25 19:06:16Z"
+}
+},
+{
+"strategy": "C exif DateTime+Original, taken set at insert",
+"whilePendingAfterInsert": {
+"taken": "2019-07-14 10:30:00Z",
+"modified": "1970-01-01 00:00:00Z",
+"added": "2026-10-25 19:06:20Z",
+"pending": 1,
+"fileMtime": "1970-01-01 00:00:00Z"
+},
+"clearedImmediately": {
+"taken": null,
+"modified": "2026-10-25 19:06:20Z",
+"added": "2026-10-25 19:06:20Z",
+"pending": 0,
+"fileMtime": "2026-10-25 19:06:20Z"
+},
+"clearedAfter4s": {
+"taken": null,
+"modified": "2026-10-25 19:06:20Z",
+"added": "2026-10-25 19:06:20Z",
+"pending": 0,
+"fileMtime": "2026-10-25 19:06:20Z"
+}
+},
+{
+"strategy": "D no exif, taken set at insert",
+"whilePendingAfterInsert": {
+"taken": "2019-07-14 10:30:00Z",
+"modified": "1970-01-01 00:00:00Z",
+"added": "2026-10-25 19:06:24Z",
+"pending": 1,
+"fileMtime": "1970-01-01 00:00:00Z"
+},
+"clearedImmediately": {
+"taken": null,
+"modified": "2026-10-25 19:06:24Z",
+"added": "2026-10-25 19:06:24Z",
+"pending": 0,
+"fileMtime": "2026-10-25 19:06:24Z"
+},
+"clearedAfter4s": {
+"taken": null,
+"modified": "2026-10-25 19:06:24Z",
+"added": "2026-10-25 19:06:24Z",
+"pending": 0,
+"fileMtime": "2026-10-25 19:06:24Z"
+}
+},
+{
+"strategy": "E no exif, taken set by update 4 s after clearing pending",
+"whilePendingAfterInsert": {
+"taken": null,
+"modified": "1970-01-01 00:00:00Z",
+"added": "2026-10-25 19:06:28Z",
+"pending": 1,
+"fileMtime": "1970-01-01 00:00:00Z"
+},
+"updateRows": 0,
+"afterUpdateImmediately": {
+"taken": null,
+"modified": "2026-10-25 19:06:28Z",
+"added": "2026-10-25 19:06:28Z",
+"pending": 0,
+"fileMtime": "2026-10-25 19:06:28Z"
+},
+"afterUpdateAfter4s": {
+"taken": null,
+"modified": "2026-10-25 19:06:28Z",
+"added": "2026-10-25 19:06:28Z",
+"pending": 0,
+"fileMtime": "2026-10-25 19:06:28Z"
+}
+},
+{
+"strategy": "F no exif, file mtime set while pending (path from _data)",
+"whilePendingAfterInsert": {
+"taken": null,
+"modified": "1970-01-01 00:00:00Z",
+"added": "2026-10-25 19:06:36Z",
+"pending": 1,
+"fileMtime": "1970-01-01 00:00:00Z"
+},
+"setLastModified": true,
+"clearedImmediately": {
+"taken": null,
+"modified": "2019-07-14 10:30:00Z",
+"added": "2026-10-25 19:06:36Z",
+"pending": 0,
+"fileMtime": "2019-07-14 10:30:00Z"
+},
+"clearedAfter4s": {
+"taken": null,
+"modified": "2019-07-14 10:30:00Z",
+"added": "2026-10-25 19:06:36Z",
+"pending": 0,
+"fileMtime": "2019-07-14 10:30:00Z"
+}
+},
+{
+"strategy": "G no exif, file mtime set after clearing pending, then rescan",
+"whilePendingAfterInsert": {
+"taken": null,
+"modified": "1970-01-01 00:00:00Z",
+"added": "2026-10-25 19:06:40Z",
+"pending": 1,
+"fileMtime": "1970-01-01 00:00:00Z"
+},
+"setLastModified": true,
+"beforeRescan": {
+"taken": null,
+"modified": "2026-10-25 19:06:40Z",
+"added": "2026-10-25 19:06:40Z",
+"pending": 0,
+"fileMtime": "2019-07-14 10:30:00Z"
+},
+"afterRescanImmediately": {
+"taken": null,
+"modified": "2026-10-25 19:06:40Z",
+"added": "2026-10-25 19:06:40Z",
+"pending": 0,
+"fileMtime": "2019-07-14 10:30:00Z"
+},
+"afterRescanAfter4s": {
+"taken": null,
+"modified": "2019-07-14 10:30:00Z",
+"added": "2026-10-25 19:06:40Z",
+"pending": 0,
+"fileMtime": "2019-07-14 10:30:00Z"
+}
+},
+{
+"strategy": "H exif DateTime+Original, cleared, then explicit rescan",
+"whilePendingAfterInsert": {
+"taken": null,
+"modified": "1970-01-01 00:00:00Z",
+"added": "2026-10-25 19:06:46Z",
+"pending": 1,
+"fileMtime": "1970-01-01 00:00:00Z"
+},
+"afterRescanImmediately": {
+"taken": null,
+"modified": "2026-10-25 19:06:46Z",
+"added": "2026-10-25 19:06:46Z",
+"pending": 0,
+"fileMtime": "2026-10-25 19:06:46Z"
+},
+"afterRescanAfter4s": {
+"taken": null,
+"modified": "2026-10-25 19:06:46Z",
+"added": "2026-10-25 19:06:46Z",
+"pending": 0,
+"fileMtime": "2026-10-25 19:06:46Z"
+}
+},
+{
+"strategy": "K exif BOTH, one update sets taken and clears pending together",
+"whilePendingAfterInsert": {
+"taken": null,
+"modified": "1970-01-01 00:00:00Z",
+"added": "2026-10-25 19:06:52Z",
+"pending": 1,
+"fileMtime": "1970-01-01 00:00:00Z"
+},
+"updateRows": 1,
+"afterUpdateImmediately": {
+"taken": null,
+"modified": "2026-10-25 19:06:52Z",
+"added": "2026-10-25 19:06:52Z",
+"pending": 0,
+"fileMtime": "2026-10-25 19:06:52Z"
+},
+"afterUpdateAfter4s": {
+"taken": null,
+"modified": "2026-10-25 19:06:52Z",
+"added": "2026-10-25 19:06:52Z",
+"pending": 0,
+"fileMtime": "2026-10-25 19:06:52Z"
+}
+},
+{
+"strategy": "L exif BOTH, mtime set while pending, taken set at insert",
+"whilePendingAfterInsert": {
+"taken": "2019-07-14 10:30:00Z",
+"modified": "1970-01-01 00:00:00Z",
+"added": "2026-10-25 19:06:56Z",
+"pending": 1,
+"fileMtime": "1970-01-01 00:00:00Z"
+},
+"setLastModified": true,
+"clearedImmediately": {
+"taken": "2019-07-14 10:30:00Z",
+"modified": "2019-07-14 10:30:00Z",
+"added": "2026-10-25 19:06:56Z",
+"pending": 0,
+"fileMtime": "2019-07-14 10:30:00Z"
+},
+"clearedAfter4s": {
+"taken": "2019-07-14 10:30:00Z",
+"modified": "2019-07-14 10:30:00Z",
+"added": "2026-10-25 19:06:56Z",
+"pending": 0,
+"fileMtime": "2019-07-14 10:30:00Z"
+}
+},
+{
+"strategy": "M no exif, taken set while pending, mtime = taken",
+"whilePendingAfterInsert": {
+"taken": null,
+"modified": "1970-01-01 00:00:00Z",
+"added": "2026-10-25 19:07:00Z",
+"pending": 1,
+"fileMtime": "1970-01-01 00:00:00Z"
+},
+"setLastModified": true,
+"clearedImmediately": {
+"taken": null,
+"modified": "2019-07-14 10:30:00Z",
+"added": "2026-10-25 19:07:00Z",
+"pending": 0,
+"fileMtime": "2019-07-14 10:30:00Z"
+},
+"clearedAfter4s": {
+"taken": null,
+"modified": "2019-07-14 10:30:00Z",
+"added": "2026-10-25 19:07:00Z",
+"pending": 0,
+"fileMtime": "2019-07-14 10:30:00Z"
+}
+},
+{
+"strategy": "N no exif, taken = mtime + 10 days (conflict)",
+"whilePendingAfterInsert": {
+"taken": null,
+"modified": "1970-01-01 00:00:00Z",
+"added": "2026-10-25 19:07:04Z",
+"pending": 1,
+"fileMtime": "1970-01-01 00:00:00Z"
+},
+"setLastModified": true,
+"clearedImmediately": {
+"taken": null,
+"modified": "2019-07-14 10:30:00Z",
+"added": "2026-10-25 19:07:04Z",
+"pending": 0,
+"fileMtime": "2019-07-14 10:30:00Z"
+},
+"clearedAfter4s": {
+"taken": null,
+"modified": "2019-07-14 10:30:00Z",
+"added": "2026-10-25 19:07:04Z",
+"pending": 0,
+"fileMtime": "2019-07-14 10:30:00Z"
+}
+},
+{
+"strategy": "P no exif, taken = mtime + 1 day",
+"whilePendingAfterInsert": {
+"taken": null,
+"modified": "1970-01-01 00:00:00Z",
+"added": "2026-10-25 19:07:08Z",
+"pending": 1,
+"fileMtime": "1970-01-01 00:00:00Z"
+},
+"setLastModified": true,
+"clearedImmediately": {
+"taken": null,
+"modified": "2019-07-14 10:30:00Z",
+"added": "2026-10-25 19:07:08Z",
+"pending": 0,
+"fileMtime": "2019-07-14 10:30:00Z"
+},
+"clearedAfter4s": {
+"taken": null,
+"modified": "2019-07-14 10:30:00Z",
+"added": "2026-10-25 19:07:08Z",
+"pending": 0,
+"fileMtime": "2019-07-14 10:30:00Z"
+}
+},
+{
+"strategy": "Q exif BOTH, taken unset, mtime set (EXIF alone, old file time)",
+"whilePendingAfterInsert": {
+"taken": null,
+"modified": "1970-01-01 00:00:00Z",
+"added": "2026-10-25 19:07:12Z",
+"pending": 1,
+"fileMtime": "1970-01-01 00:00:00Z"
+},
+"setLastModified": true,
+"clearedImmediately": {
+"taken": "2019-07-14 10:30:00Z",
+"modified": "2019-07-14 10:30:00Z",
+"added": "2026-10-25 19:07:12Z",
+"pending": 0,
+"fileMtime": "2019-07-14 10:30:00Z"
+},
+"clearedAfter4s": {
+"taken": "2019-07-14 10:30:00Z",
+"modified": "2019-07-14 10:30:00Z",
+"added": "2026-10-25 19:07:12Z",
+"pending": 0,
+"fileMtime": "2019-07-14 10:30:00Z"
+}
+}
+],
+"mode": "dates",
+"device": {
+"model": "sdk_gphone16k_arm64",
+"sdk": 37
+}
+}

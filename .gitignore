@@ -11,3 +11,7 @@ captures/
 *.aab
 *.keystore
 *.jks
+
+# Spike 6: personal sample media stays local, never committed (public repo)
+spikes/restore/local-fixtures/*
+!spikes/restore/local-fixtures/.gitkeep
