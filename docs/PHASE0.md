@@ -14,7 +14,7 @@ Living checklist for SPEC §16 Phase 0. Updated 2026-10-23. Phase 0 is done only
 | Threat model draft | Draft, unreviewed | `THREATS.md` |
 | Cost model template | Template only, no figures | `COST_MODEL.md` |
 | Remaining modules from the CLAUDE.md layout | Not created on purpose: each is added in the phase that first uses it | — |
-| Spike reports | **4 of 9 run**: spike 1 and spike 2 (one real phone each), spike 3 (emulator and one real phone), spike 5 (research only) | `PLATFORM_CONSTRAINTS.md` spike log |
+| Spike reports | **4 of 9 run, 1 partly**: spike 1 and spike 2 (one real phone each), spike 6 (emulator only, partly), spike 3 (emulator and one real phone), spike 5 (research only) | `PLATFORM_CONSTRAINTS.md` spike log |
 | Spike 3 harness | Throwaway Android app, never shipped | `spikes/crypto` |
 
 ## Spikes: what each one needs before it can run
@@ -28,12 +28,12 @@ Nothing below has been started. "Ask" means CLAUDE.md requires the owner's appro
 | 3 | Tink streaming AEAD + Argon2id on a low-end device | **Done for library choice** on the emulator and a real Galaxy M31 (mid-range) over wireless debugging; ADR-014 proposed. KDF parameter floor stays provisional until a ≤ 3 GB RAM phone is measured. Dependencies approved by the owner for this spike | Owner: accept ADR-014? Another, weaker phone? |
 | 4 | Drive authorization, resumable upload, checksums, revoke | Google Cloud project and OAuth client, a Google account, Google auth and Drive client libraries | **Dependencies, account setup** |
 | 5 | All-files access vs picker/SAF strategy | **Research done** (`docs/spikes/spike5-permission-strategy.md`); Play declaration drafted, **not submitted**, so approval is unknown | Owner: accept the ADR-007 refinement? When to submit? |
-| 6 | MediaStore restore preserving dates and paths | Spike module; own-file MediaStore writes (no extra permission expected **[verify]**); emulators across API levels | New module |
+| 6 | MediaStore restore preserving dates and paths | **Partly done on the emulator** (`spikes/restore`, `docs/spikes/spike6-restore.md`): no permission needed, dates need a workaround. Still open: the Galaxy M31 run, a sample video from the owner (local folder only, never committed), Android 11 | Owner: phone and video when available |
 | 7 | Keystore + Auto Backup on device loss | Two devices or emulators, a backup/restore run; decides `allowBackup` | New module |
 | 8 | Foreground service `dataSync` timeout | Spike module, a foreground-service permission and type declaration; find the documented way to trigger the timeout before relying on one | Permission |
 | 9 | User-initiated data transfer jobs | Read the official docs first, then a small prototype | Permission, maybe |
 
-The `spikes` parent module now holds `:spikes:crypto` (spike 3), `:spikes:mediastore` (spike 1) and `:spikes:saf` (spike 2). Proposed next step, if approved: add 6, 7, 8 and 9 as further debug-only modules under `spikes/` (platform APIs only, no third-party dependencies), run on the emulator first and then on real hardware. Spike 4 waits for the owner to set up the Google Cloud project when asked.
+The `spikes` parent module now holds `:spikes:crypto` (spike 3), `:spikes:mediastore` (spike 1) and `:spikes:saf` (spike 2) and `:spikes:restore` (spike 6). Proposed next step, if approved: add 7, 8 and 9 as further debug-only modules under `spikes/` (platform APIs only, no third-party dependencies), run on the emulator first and then on real hardware. Spike 4 waits for the owner to set up the Google Cloud project when asked.
 
 ## Environment notes (2026-10-23)
 

@@ -1,0 +1,824 @@
+{
+"results": [
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 23,
+"updatedRows": 1,
+"uriId": "20",
+"variant": "consistent",
+"wanted": {
+"exifOriginal": "2019:07:01 10:30:00",
+"exifAsUtc": "2019-07-01 10:30:00Z",
+"requestedTaken": "2019-07-01 10:30:00Z",
+"requestedModified": "2019-07-01 10:30:00Z",
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 23,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954931,
+"dateModified": "2026-10-25 19:02:11Z",
+"dateAdded": "2026-10-25 19:02:11Z",
+"size": 1798,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:11Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:01 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 23,
+"updatedRows": 1,
+"uriId": "21",
+"variant": "consistent",
+"wanted": {
+"exifOriginal": "2019:07:02 10:30:00",
+"exifAsUtc": "2019-07-02 10:30:00Z",
+"requestedTaken": "2019-07-02 10:30:00Z",
+"requestedModified": "2019-07-02 10:30:00Z",
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 23,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954931,
+"dateModified": "2026-10-25 19:02:11Z",
+"dateAdded": "2026-10-25 19:02:11Z",
+"size": 1780,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:11Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:02 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 23,
+"updatedRows": 1,
+"uriId": "22",
+"variant": "consistent",
+"wanted": {
+"exifOriginal": "2019:07:03 10:30:00",
+"exifAsUtc": "2019-07-03 10:30:00Z",
+"requestedTaken": "2019-07-03 10:30:00Z",
+"requestedModified": "2019-07-03 10:30:00Z",
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 23,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954931,
+"dateModified": "2026-10-25 19:02:11Z",
+"dateAdded": "2026-10-25 19:02:11Z",
+"size": 1867,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:11Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:03 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 18,
+"updatedRows": 1,
+"uriId": "23",
+"variant": "unset",
+"wanted": {
+"exifOriginal": "2019:07:04 10:30:00",
+"exifAsUtc": null,
+"requestedTaken": null,
+"requestedModified": null,
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 18,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954932,
+"dateModified": "2026-10-25 19:02:12Z",
+"dateAdded": "2026-10-25 19:02:11Z",
+"size": 1875,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:12Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:04 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 18,
+"updatedRows": 1,
+"uriId": "24",
+"variant": "unset",
+"wanted": {
+"exifOriginal": "2019:07:05 10:30:00",
+"exifAsUtc": null,
+"requestedTaken": null,
+"requestedModified": null,
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 18,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954932,
+"dateModified": "2026-10-25 19:02:12Z",
+"dateAdded": "2026-10-25 19:02:12Z",
+"size": 1823,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:12Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:05 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 18,
+"updatedRows": 1,
+"uriId": "25",
+"variant": "unset",
+"wanted": {
+"exifOriginal": "2019:07:06 10:30:00",
+"exifAsUtc": null,
+"requestedTaken": null,
+"requestedModified": null,
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 18,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954932,
+"dateModified": "2026-10-25 19:02:12Z",
+"dateAdded": "2026-10-25 19:02:12Z",
+"size": 1885,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:12Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:06 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 24,
+"updatedRows": 1,
+"uriId": "26",
+"variant": "conflicting",
+"wanted": {
+"exifOriginal": "2019:07:07 10:30:00",
+"exifAsUtc": "2019-07-07 10:30:00Z",
+"requestedTaken": "2019-07-17 10:30:00Z",
+"requestedModified": "2019-07-17 10:30:00Z",
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 24,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954933,
+"dateModified": "2026-10-25 19:02:13Z",
+"dateAdded": "2026-10-25 19:02:13Z",
+"size": 1787,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:13Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:07 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 24,
+"updatedRows": 1,
+"uriId": "27",
+"variant": "conflicting",
+"wanted": {
+"exifOriginal": "2019:07:08 10:30:00",
+"exifAsUtc": "2019-07-08 10:30:00Z",
+"requestedTaken": "2019-07-18 10:30:00Z",
+"requestedModified": "2019-07-18 10:30:00Z",
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 24,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954933,
+"dateModified": "2026-10-25 19:02:13Z",
+"dateAdded": "2026-10-25 19:02:13Z",
+"size": 1705,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:13Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:08 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 24,
+"updatedRows": 1,
+"uriId": "28",
+"variant": "conflicting",
+"wanted": {
+"exifOriginal": "2019:07:09 10:30:00",
+"exifAsUtc": "2019-07-09 10:30:00Z",
+"requestedTaken": "2019-07-19 10:30:00Z",
+"requestedModified": "2019-07-19 10:30:00Z",
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 24,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954933,
+"dateModified": "2026-10-25 19:02:13Z",
+"dateAdded": "2026-10-25 19:02:13Z",
+"size": 1847,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:13Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:09 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 26,
+"updatedRows": 1,
+"uriId": "29",
+"variant": "after-pending",
+"wanted": {
+"exifOriginal": "2019:07:10 10:30:00",
+"exifAsUtc": "2019-07-10 10:30:00Z",
+"requestedTaken": "2019-07-10 10:30:00Z",
+"requestedModified": "2019-07-10 10:30:00Z",
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 26,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954933,
+"dateModified": "2026-10-25 19:02:13Z",
+"dateAdded": "2026-10-25 19:02:13Z",
+"size": 1750,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:13Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:10 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 26,
+"updatedRows": 1,
+"uriId": "30",
+"variant": "after-pending",
+"wanted": {
+"exifOriginal": "2019:07:11 10:30:00",
+"exifAsUtc": "2019-07-11 10:30:00Z",
+"requestedTaken": "2019-07-11 10:30:00Z",
+"requestedModified": "2019-07-11 10:30:00Z",
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 26,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954933,
+"dateModified": "2026-10-25 19:02:13Z",
+"dateAdded": "2026-10-25 19:02:13Z",
+"size": 1912,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:13Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:11 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 26,
+"updatedRows": 1,
+"uriId": "31",
+"variant": "after-pending",
+"wanted": {
+"exifOriginal": "2019:07:12 10:30:00",
+"exifAsUtc": "2019-07-12 10:30:00Z",
+"requestedTaken": "2019-07-12 10:30:00Z",
+"requestedModified": "2019-07-12 10:30:00Z",
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 26,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954933,
+"dateModified": "2026-10-25 19:02:13Z",
+"dateAdded": "2026-10-25 19:02:13Z",
+"size": 1893,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:13Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:12 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 23,
+"updatedRows": 1,
+"uriId": "32",
+"variant": "with-added",
+"wanted": {
+"exifOriginal": "2019:07:13 10:30:00",
+"exifAsUtc": "2019-07-13 10:30:00Z",
+"requestedTaken": "2019-07-13 10:30:00Z",
+"requestedModified": "2019-07-13 10:30:00Z",
+"requestedAdded": "2019-07-13 10:30:00Z",
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 23,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954933,
+"dateModified": "2026-10-25 19:02:13Z",
+"dateAdded": "2026-10-25 19:02:13Z",
+"size": 1977,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:13Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:13 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 23,
+"updatedRows": 1,
+"uriId": "33",
+"variant": "with-added",
+"wanted": {
+"exifOriginal": "2019:07:14 10:30:00",
+"exifAsUtc": "2019-07-14 10:30:00Z",
+"requestedTaken": "2019-07-14 10:30:00Z",
+"requestedModified": "2019-07-14 10:30:00Z",
+"requestedAdded": "2019-07-14 10:30:00Z",
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 23,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954933,
+"dateModified": "2026-10-25 19:02:13Z",
+"dateAdded": "2026-10-25 19:02:13Z",
+"size": 1985,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:13Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:14 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 23,
+"updatedRows": 1,
+"uriId": "34",
+"variant": "with-added",
+"wanted": {
+"exifOriginal": "2019:07:15 10:30:00",
+"exifAsUtc": "2019-07-15 10:30:00Z",
+"requestedTaken": "2019-07-15 10:30:00Z",
+"requestedModified": "2019-07-15 10:30:00Z",
+"requestedAdded": "2019-07-15 10:30:00Z",
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 23,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954933,
+"dateModified": "2026-10-25 19:02:13Z",
+"dateAdded": "2026-10-25 19:02:13Z",
+"size": 1887,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:13Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:15 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 18,
+"updatedRows": 1,
+"uriId": "35",
+"variant": "collision-first",
+"wanted": {},
+"stored": {
+"storedNameLength": 18,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954933,
+"dateModified": "2026-10-25 19:02:13Z",
+"dateAdded": "2026-10-25 19:02:13Z",
+"size": 2065,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:13Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:17 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 18,
+"updatedRows": 1,
+"uriId": "36",
+"variant": "collision-second",
+"wanted": {},
+"stored": {
+"storedNameLength": 22,
+"storedNameKind": "suffix-added",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954933,
+"dateModified": "2026-10-25 19:02:13Z",
+"dateAdded": "2026-10-25 19:02:13Z",
+"size": 1979,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:13Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:18 10:30:00"
+}
+},
+{
+"variant": "collision-first-rechecked",
+"stored": {
+"storedNameLength": 18,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954933,
+"dateModified": "2026-10-25 19:02:13Z",
+"dateAdded": "2026-10-25 19:02:13Z",
+"size": 2065,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:13Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:17 10:30:00"
+},
+"sameUriAsSecond": false
+},
+{
+"name": "(redacted)",
+"relPath": "Pictures\/Restored\/",
+"requestedNameLength": 17,
+"updatedRows": 1,
+"uriId": "38",
+"variant": "path",
+"wanted": {
+"exifOriginal": "2019:07:16 10:30:00",
+"exifAsUtc": "2019-07-16 10:30:00Z",
+"requestedTaken": "2019-07-16 10:30:00Z",
+"requestedModified": "2019-07-16 10:30:00Z",
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 17,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "Pictures\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954933,
+"dateModified": "2026-10-25 19:02:13Z",
+"dateAdded": "2026-10-25 19:02:13Z",
+"size": 1941,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:13Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:16 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "Pictures\/Restored\/Sub\/Deep\/",
+"requestedNameLength": 17,
+"updatedRows": 1,
+"uriId": "41",
+"variant": "path",
+"wanted": {
+"exifOriginal": "2019:07:17 10:30:00",
+"exifAsUtc": "2019-07-17 10:30:00Z",
+"requestedTaken": "2019-07-17 10:30:00Z",
+"requestedModified": "2019-07-17 10:30:00Z",
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 17,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "Pictures\/Restored\/Sub\/Deep\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954933,
+"dateModified": "2026-10-25 19:02:13Z",
+"dateAdded": "2026-10-25 19:02:13Z",
+"size": 1830,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:13Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:17 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "Documents\/Restored\/",
+"requestedNameLength": 17,
+"error": "IllegalArgumentException: Primary directory Documents not allowed for content:\/\/media\/external_primary\/images\/media; allowed directories are [DCIM, Pictures]",
+"variant": "path",
+"wanted": {
+"exifOriginal": "2019:07:18 10:30:00",
+"exifAsUtc": "2019-07-18 10:30:00Z",
+"requestedTaken": "2019-07-18 10:30:00Z",
+"requestedModified": "2019-07-18 10:30:00Z",
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+}
+},
+{
+"name": "(redacted)",
+"relPath": "Download\/Restored\/",
+"requestedNameLength": 17,
+"error": "IllegalArgumentException: Primary directory Download not allowed for content:\/\/media\/external_primary\/images\/media; allowed directories are [DCIM, Pictures]",
+"variant": "path",
+"wanted": {
+"exifOriginal": "2019:07:19 10:30:00",
+"exifAsUtc": "2019-07-19 10:30:00Z",
+"requestedTaken": "2019-07-19 10:30:00Z",
+"requestedModified": "2019-07-19 10:30:00Z",
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+}
+},
+{
+"name": "(redacted)",
+"relPath": "Movies\/Restored\/",
+"requestedNameLength": 17,
+"error": "IllegalArgumentException: Primary directory Movies not allowed for content:\/\/media\/external_primary\/images\/media; allowed directories are [DCIM, Pictures]",
+"variant": "path",
+"wanted": {
+"exifOriginal": "2019:07:20 10:30:00",
+"exifAsUtc": "2019-07-20 10:30:00Z",
+"requestedTaken": "2019-07-20 10:30:00Z",
+"requestedModified": "2019-07-20 10:30:00Z",
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+}
+},
+{
+"name": "(redacted)",
+"relPath": "Restored\/",
+"requestedNameLength": 17,
+"error": "IllegalArgumentException: Primary directory Restored not allowed for content:\/\/media\/external_primary\/images\/media; allowed directories are [DCIM, Pictures]",
+"variant": "path",
+"wanted": {
+"exifOriginal": "2019:07:21 10:30:00",
+"exifAsUtc": "2019-07-21 10:30:00Z",
+"requestedTaken": "2019-07-21 10:30:00Z",
+"requestedModified": "2019-07-21 10:30:00Z",
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Camera\/",
+"requestedNameLength": 17,
+"updatedRows": 1,
+"uriId": "43",
+"variant": "path",
+"wanted": {
+"exifOriginal": "2019:07:22 10:30:00",
+"exifAsUtc": "2019-07-22 10:30:00Z",
+"requestedTaken": "2019-07-22 10:30:00Z",
+"requestedModified": "2019-07-22 10:30:00Z",
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 17,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Camera\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954933,
+"dateModified": "2026-10-25 19:02:13Z",
+"dateAdded": "2026-10-25 19:02:13Z",
+"size": 1933,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:13Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:22 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 13,
+"updatedRows": 1,
+"uriId": "44",
+"variant": "name-unicode",
+"wanted": {
+"exifOriginal": "2019:07:23 10:30:00",
+"exifAsUtc": "2019-07-23 10:30:00Z",
+"requestedTaken": "2019-07-23 10:30:00Z",
+"requestedModified": "2019-07-23 10:30:00Z",
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 13,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954933,
+"dateModified": "2026-10-25 19:02:13Z",
+"dateAdded": "2026-10-25 19:02:13Z",
+"size": 1996,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:13Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:23 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 255,
+"updatedRows": 1,
+"uriId": "45",
+"variant": "name-255-chars",
+"wanted": {
+"exifOriginal": "2019:07:24 10:30:00",
+"exifAsUtc": "2019-07-24 10:30:00Z",
+"requestedTaken": "2019-07-24 10:30:00Z",
+"requestedModified": "2019-07-24 10:30:00Z",
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 235,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954933,
+"dateModified": "2026-10-25 19:02:13Z",
+"dateAdded": "2026-10-25 19:02:13Z",
+"size": 1983,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:13Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:24 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 10,
+"updatedRows": 1,
+"uriId": "46",
+"variant": "name-slash-in-name",
+"wanted": {
+"exifOriginal": "2019:07:25 10:30:00",
+"exifAsUtc": "2019-07-25 10:30:00Z",
+"requestedTaken": "2019-07-25 10:30:00Z",
+"requestedModified": "2019-07-25 10:30:00Z",
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 10,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954933,
+"dateModified": "2026-10-25 19:02:13Z",
+"dateAdded": "2026-10-25 19:02:13Z",
+"size": 1939,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:13Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:25 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 14,
+"updatedRows": 1,
+"uriId": "47",
+"variant": "name-no-extension",
+"wanted": {
+"exifOriginal": "2019:07:26 10:30:00",
+"exifAsUtc": "2019-07-26 10:30:00Z",
+"requestedTaken": "2019-07-26 10:30:00Z",
+"requestedModified": "2019-07-26 10:30:00Z",
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 18,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954933,
+"dateModified": "2026-10-25 19:02:13Z",
+"dateAdded": "2026-10-25 19:02:13Z",
+"size": 1941,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:13Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:26 10:30:00"
+}
+},
+{
+"name": "(redacted)",
+"relPath": "DCIM\/Restored\/",
+"requestedNameLength": 12,
+"updatedRows": 1,
+"uriId": "48",
+"variant": "name-upper-extension",
+"wanted": {
+"exifOriginal": "2019:07:27 10:30:00",
+"exifAsUtc": "2019-07-27 10:30:00Z",
+"requestedTaken": "2019-07-27 10:30:00Z",
+"requestedModified": "2019-07-27 10:30:00Z",
+"requestedAdded": null,
+"exifAsLocalMs": -19800000
+},
+"stored": {
+"storedNameLength": 12,
+"storedNameKind": "as-requested-or-unknown",
+"storedRelPath": "DCIM\/Restored\/",
+"dateTaken": null,
+"dateModifiedSec": 1792954933,
+"dateModified": "2026-10-25 19:02:13Z",
+"dateAdded": "2026-10-25 19:02:13Z",
+"size": 1813,
+"isPending": 0,
+"fileMtime": "2026-10-25 19:02:13Z",
+"sha256Matches": true,
+"exifDateTimeOriginal": "2019:07:27 10:30:00"
+}
+}
+],
+"cameraFolderTested": true,
+"mode": "images",
+"device": {
+"model": "sdk_gphone16k_arm64",
+"sdk": 37
+}
+}
