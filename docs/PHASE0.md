@@ -14,7 +14,7 @@ Living checklist for SPEC §16 Phase 0. Updated 2026-10-23. Phase 0 is done only
 | Threat model draft | Draft, unreviewed | `THREATS.md` |
 | Cost model template | Template only, no figures | `COST_MODEL.md` |
 | Remaining modules from the CLAUDE.md layout | Not created on purpose: each is added in the phase that first uses it | — |
-| Spike reports | **4 of 9 run, 1 partly**: spike 1 and spike 2 (one real phone each), spike 6 (emulator only, partly), spike 3 (emulator and one real phone), spike 5 (research only) | `PLATFORM_CONSTRAINTS.md` spike log |
+| Spike reports | **5 of 9 run, 1 partly**: spike 1 and spike 2 (one real phone each), spike 8 (emulator), spike 6 (emulator only, partly), spike 3 (emulator and one real phone), spike 5 (research only) | `PLATFORM_CONSTRAINTS.md` spike log |
 | Spike 3 harness | Throwaway Android app, never shipped | `spikes/crypto` |
 
 ## Spikes: what each one needs before it can run
@@ -30,10 +30,10 @@ Nothing below has been started. "Ask" means CLAUDE.md requires the owner's appro
 | 5 | All-files access vs picker/SAF strategy | **Research done** (`docs/spikes/spike5-permission-strategy.md`); Play declaration drafted, **not submitted**, so approval is unknown | Owner: accept the ADR-007 refinement? When to submit? |
 | 6 | MediaStore restore preserving dates and paths | **Partly done on the emulator** (`spikes/restore`, `docs/spikes/spike6-restore.md`): no permission needed, dates need a workaround. Still open: the Galaxy M31 run, a sample video from the owner (local folder only, never committed), Android 11 | Owner: phone and video when available |
 | 7 | Keystore + Auto Backup on device loss | Two devices or emulators, a backup/restore run; decides `allowBackup` | New module |
-| 8 | Foreground service `dataSync` timeout | Spike module, a foreground-service permission and type declaration; find the documented way to trigger the timeout before relying on one | Permission |
+| 8 | Foreground service `dataSync` timeout | **Done on the emulator** (`spikes/fgs`, `docs/spikes/spike8-fgs.md`; permissions in ADR-016). The Galaxy M31 cannot show the timeout (Android 12); only its freezer baseline and kill/resume remain to run | Owner: tell me when the phone is free |
 | 9 | User-initiated data transfer jobs | Read the official docs first, then a small prototype | Permission, maybe |
 
-The `spikes` parent module now holds `:spikes:crypto` (spike 3), `:spikes:mediastore` (spike 1) and `:spikes:saf` (spike 2) and `:spikes:restore` (spike 6). Proposed next step, if approved: add 7, 8 and 9 as further debug-only modules under `spikes/` (platform APIs only, no third-party dependencies), run on the emulator first and then on real hardware. Spike 4 waits for the owner to set up the Google Cloud project when asked.
+The `spikes` parent module now holds `:spikes:crypto` (spike 3), `:spikes:mediastore` (spike 1) and `:spikes:saf` (spike 2) `:spikes:restore` (spike 6) and `:spikes:fgs` (spike 8). Proposed next step, if approved: add 7 and 9 as further debug-only modules under `spikes/` (platform APIs only, no third-party dependencies), run on the emulator first and then on real hardware. Spike 4 waits for the owner to set up the Google Cloud project when asked.
 
 ## Environment notes (2026-10-23)
 
