@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Permissions are in src/debug/AndroidManifest.xml so they exist only in debug builds. -->
+    <application
+        android:allowBackup="false"
+        android:label="Spike 8 FGS"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar">
+        <activity
+            android:name=".SpikeActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".SimJobService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
+        <!-- Lets adb start the service while the app is in the background (restart-after-timeout test). -->
+        <receiver
+            android:name=".StartReceiver"
+            android:exported="true" />
+    </application>
+
+</manifest>

@@ -60,6 +60,7 @@ Phase 5: encrypted vCard/ICS export and duplicate-safe restore; `READ_CONTACTS` 
 ## ADR-010 — Background execution
 **Status:** Proposed
 WorkManager for scans/incremental work; foreground service for long uploads with `onTimeout` handling for the 6 h/24 h `dataSync` limit; all work resumable. Evaluate user-initiated data transfer jobs (spike 9).
+Evidence (spike 8, 2026-10-26, emulator only, still Proposed): a plain thread in the app process was frozen about 70 s after the app left the screen, so long transfers must run in a foreground service; `onTimeout` must call `stopSelf()` promptly (the crash came 10.0 s after `onTimeout` when ignored); progress saved per chunk resumed with nothing lost or repeated; a first backup lasting days will pause roughly every 6 hours in the background until the user opens the app, and the UI must say so. WorkManager as a fallback would be a new dependency. Detail: `docs/spikes/spike8-fgs.md`.
 
 ## ADR-011 — Telemetry
 **Status:** Proposed
@@ -68,6 +69,14 @@ No analytics. Local logs + user-triggered redacted diagnostics. Optional opt-in 
 ## ADR-012 — Guides as data
 **Status:** Proposed
 Recovery guides are versioned data resources with `last_reviewed` dates and source links; never claim automation that does not exist; localisable.
+
+## ADR-016 — Spike 8 permissions in the debug build of `spikes/fgs`
+**Status:** Accepted (owner approval in chat, 2026-10-26)
+Context: spike 8 tests a `dataSync` foreground service and its timeout. Android requires `FOREGROUND_SERVICE` and `FOREGROUND_SERVICE_DATA_SYNC` for that, and the notification (including a "tap to continue" notification after a timeout) needs `POST_NOTIFICATIONS` on Android 13+. CLAUDE.md requires approval and an ADR for each new permission.
+Decision: the owner approved `FOREGROUND_SERVICE`, `FOREGROUND_SERVICE_DATA_SYNC` and `POST_NOTIFICATIONS` **only in `spikes/fgs/src/debug/AndroidManifest.xml`**. Same limits as ADR-015: never shipped, no third-party dependencies, the production `:app` manifest gains no permission from this ADR. Whether the product itself needs these permissions is a separate decision for the Phase 2 design.
+Alternatives considered: testing without a notification (a foreground service needs one; the "tap to continue" path is part of the question).
+Evidence: `aapt2 dump permissions` on the built spike APK (see the spike 8 report).
+Date / author: 2026-10-26 / Claude Code, approved by the owner
 
 ## ADR-015 — Spike-only permissions in debug builds
 **Status:** Accepted (owner approval in chat, 2026-10-24)
