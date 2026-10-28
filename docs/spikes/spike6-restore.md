@@ -2,7 +2,7 @@
 
 Date: 2026-10-26. Harness: `spikes/restore` (throwaway, never shipped, **no permissions**, no dependencies). Spec: SPEC §16 Phase 0 spike 6, §8.10.
 
-**Status: partly done.** Everything below was measured on **one device: the Pixel 9 Pro emulator, Android 37, time zone Asia/Kolkata**. The Galaxy M31 (Android 12) was busy, so the phone run is still to do. The sample-video test is waiting for a video from the owner. Android 11 (our minimum) is not covered.
+**Status: mostly done.** Measured on **two devices**: the Pixel 9 Pro emulator (Android 37) on 2026-10-26 and the owner's **Galaxy M31 (SM-M315F, Android 12, time zone Asia/Kolkata)** on 2026-10-28. The two agree on every test. **Still open:** the sample-video test (waiting for a video from the owner) and Android 11, our minimum, which neither device runs.
 
 ## Criteria (written before the first run)
 
@@ -24,7 +24,7 @@ Date: 2026-10-26. Harness: `spikes/restore` (throwaway, never shipped, **no perm
 - Another-app view (R6): the spike 1 app, which enumerates MediaStore, counted rows before, during and after.
 - File names are synthetic and shown only as lengths. Raw data: `docs/spikes/spike6-emulator-*-2026-10-26.json`.
 
-## Results (emulator only)
+## Results (emulator and Galaxy M31, identical)
 
 | # | Result | Verdict |
 | --- | --- | --- |
@@ -66,13 +66,36 @@ Two more details: the EXIF time has no time zone and MediaStore stored it as 10:
 4. Restored folders for photos are limited to `DCIM/` and `Pictures/`; documents go to a picked folder, not MediaStore.
 5. Record the stored name and the original name for every file (silent changes seen above).
 
+
+## Galaxy M31 (Android 12) run, 2026-10-28
+
+Same app, same modes, nothing changed except `camera` was **off** so no test file went into the owner's `DCIM/Camera`. Raw data: `docs/spikes/spike6-sm-m315f-*-2026-10-28.json`.
+
+| Test | M31 result |
+| --- | --- |
+| Restore into `DCIM/Restored/`, `Pictures/Restored/`, nested `Pictures/Restored/Sub/Deep/`, with **no permission** | Worked |
+| Byte-for-byte match | 25 of 25 images and 7 of 7 documents |
+| `DATE_TAKEN` / `DATE_MODIFIED` / `DATE_ADDED` via `ContentValues` | Discarded, exactly as on the emulator |
+| EXIF (both tags) plus the file's own modified time set to 2019-07-14 while pending | **`DATE_TAKEN` and `DATE_MODIFIED` both 2019-07-14** (strategies L and Q); all 14 strategies gave the same outcome as the emulator |
+| Time zone | EXIF 10:30 was stored as 10:30 **UTC** although the phone is on IST, as on the emulator |
+| Name clash | " (1)" suffix, first file unchanged, different URI |
+| Refused folders for an image | `Documents/`, `Download/`, `Movies/`, `Restored/`: `IllegalArgumentException` |
+| Silent name changes | `/` became `_`, `.jpg` appended to a name with no extension, 255 characters cut to 235 |
+| Pending visibility (spike 1 app as the other app) | **2,596 rows before, 2,596 while pending, 2,597 after** |
+| Documents through the picker (6b) | Same as the emulator: clash gets " (1)", missing or mismatched extension gains one, `.xyz` became `chemical/x-xyz`, modified time **cannot be set** (`UnsupportedOperationException: Update not supported`); 8 of 8 created items deleted |
+
+Two practical notes from the phone run:
+- The spike 1 app crashed with `JSONException: Forbidden numeric value: NaN` when asked to hash zero files (a division by zero in my timing code, hidden on the emulator by luck of timing). Fixed with a one-line guard in `spikes/mediastore`.
+- The folder picker was driven over `adb` on the owner's phone with the screen read before each tap; the two taps were "Use this folder" and "Allow" for the test folder only.
+
+**Cleanup verified:** 40 test rows removed (25 + 14 + 1, all created by this spike), none with the spike's names left, test folders removed, 53 GB free as before. The phone's overall counts are now 2,191 images and 366 videos, against 2,195 and 367 on 2026-10-24: the owner's own library changed in between, and the restore app has no storage permission, so it can only see and delete its own files.
+
 ## Still to do
 
-- **Galaxy M31 (Android 12):** rerun every mode there; the date behaviour and the UTC/IST reading may differ with the older MediaProvider. Needs the phone connected.
 - **Sample video:** needs a video from the owner placed in the local, uncommitted folder `spikes/restore/local-fixtures/`; the `video` mode is built but has not run.
 - **Android 11** (minSdk 30): not covered, would need a system image download.
 - Real camera photos, the `DateTimeOriginal`-only EXIF form with the mtime route, other makers' phones, reinstall behaviour.
 
 ## Cleanup
 
-All test rows, folders and documents were removed from the emulator (0 rows with the spike's names remain). Nothing was installed or created on the owner's phone in this part.
+All test rows, folders and documents were removed from the emulator and from the owner's phone (0 rows with the spike's names remain on either).

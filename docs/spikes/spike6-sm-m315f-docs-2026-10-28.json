@@ -1,0 +1,88 @@
+{
+"results": [
+{
+"variant": "plain",
+"requestedNameLength": 14,
+"storedNameLength": 14,
+"nameKept": true,
+"storedLastModified": "2026-10-28 03:12:09Z",
+"storedMime": "text\/plain",
+"size": 15,
+"sha256Matches": true
+},
+{
+"variant": "collision-same-name",
+"requestedNameLength": 14,
+"storedNameLength": 18,
+"nameKept": false,
+"storedLastModified": "2026-10-28 03:12:09Z",
+"storedMime": "text\/plain",
+"size": 17,
+"sha256Matches": true
+},
+{
+"variant": "collision-distinct-uris",
+"distinct": true
+},
+{
+"variant": "pdf",
+"requestedNameLength": 17,
+"storedNameLength": 17,
+"nameKept": true,
+"storedLastModified": "2026-10-28 03:12:09Z",
+"storedMime": "application\/pdf",
+"size": 15,
+"sha256Matches": true
+},
+{
+"variant": "unknown-extension",
+"requestedNameLength": 15,
+"storedNameLength": 15,
+"nameKept": true,
+"storedLastModified": "2026-10-28 03:12:10Z",
+"storedMime": "chemical\/x-xyz",
+"size": 15,
+"sha256Matches": true
+},
+{
+"variant": "no-extension",
+"requestedNameLength": 12,
+"storedNameLength": 16,
+"nameKept": false,
+"storedLastModified": "2026-10-28 03:12:10Z",
+"storedMime": "text\/plain",
+"size": 15,
+"sha256Matches": true
+},
+{
+"variant": "mime-mismatch",
+"requestedNameLength": 19,
+"storedNameLength": 23,
+"nameKept": false,
+"storedLastModified": "2026-10-28 03:12:10Z",
+"storedMime": "image\/jpeg",
+"size": 15,
+"sha256Matches": true
+},
+{
+"variant": "set-last-modified",
+"error": "UnsupportedOperationException: Update not supported"
+},
+{
+"variant": "nested-file",
+"requestedNameLength": 17,
+"storedNameLength": 17,
+"nameKept": true,
+"storedLastModified": "2026-10-28 03:12:10Z",
+"storedMime": "text\/plain",
+"size": 15,
+"sha256Matches": true
+}
+],
+"createdThenDeleted": "8 of 8",
+"mode": "docs",
+"device": {
+"model": "SM-M315F",
+"sdk": 31
+}
+}

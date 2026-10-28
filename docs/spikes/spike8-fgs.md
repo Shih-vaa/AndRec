@@ -2,7 +2,7 @@
 
 Date: 2026-10-26. Harness: `spikes/fgs` (throwaway, never shipped, no dependencies; debug-only permissions per ADR-016). Spec: SPEC §12, ADR-010, SPEC §16 Phase 0 spike 8.
 
-**Everything below was measured on one device: the Pixel 9 Pro emulator, Android 37, on an Apple-silicon host.** The Galaxy M31 runs Android 12, where the 6-hour rule does not exist, so it can only show the background-freeze baseline; that run is still to do. The 6-hour limit was **shortened to 60 s** with the documented `device_config` switch.
+**The main results below were measured on the Pixel 9 Pro emulator, Android 37.** The Galaxy M31 runs Android 12, where the 6-hour rule does not exist, so it can only show the background-freeze baseline; two short phone runs are recorded in the section "Galaxy M31 (Android 12), partial" and the longer ones are still open. The 6-hour limit was **shortened to 60 s** on the emulator with the documented `device_config` switch.
 
 ## What the official docs say (read 2026-10-26, before testing)
 
@@ -44,15 +44,30 @@ One wording mistake of mine: F1 said "expected rate", meaning 5 ticks/s (200 ms 
 | F4 | A start from the background after the timeout was refused with `ForegroundServiceStartNotAllowedException: startForegroundService() not allowed`, caught, no crash. **A control with no earlier timeout got the identical refusal and message**, so this test shows Android's ordinary background-start rule and **cannot isolate the time limit**. | **Pass as worded; time-limit path not isolated** |
 | F5 | After bringing the activity to the foreground, the service started and logged `RESUME_FROM 262`; the next tick was 263. No loss, no repeat. | **Pass** |
 | F6 | Force-stop after tick 59; the relaunched service logged `RESUME_FROM 59` and continued at tick 60. Nothing lost or repeated. | **Pass** |
-| F7 | **The plain thread was frozen about 70 s after the app went to the background**, with the screen on and no Doze (ticks stopped at 72 s; `ActivityManager: freezing <pid> <package>` appears in the log at that moment). In an earlier run with the screen off and forced idle the thread stopped at about 70 s and stayed stopped after the screen was woken. | **Recorded** |
+| F7 | **On the emulator the plain thread was frozen about 70 s after the app went to the background**, with the screen on and no Doze (ticks stopped at 72 s; `ActivityManager: freezing <pid> <package>` appears in the log at that moment). In an earlier run with the screen off and forced idle the thread stopped at about 70 s and stayed stopped after the screen was woken. | **Recorded** |
 
 ## What this means (proposals, none decided)
 
-1. **Long work must not run in a plain thread or coroutine of the app process.** Android's cached-app freezer stops it about a minute after the app leaves the screen. It needs a foreground service (or a user-initiated job, spike 9). This probably explains the spike 2 stall on the Galaxy M31 (same symptom: app backgrounded, process alive but idle); that link is **unverified** because the M31 was not tested here.
+1. **Long work should not run in a plain thread or coroutine of the app process.** On the emulator Android's cached-app freezer stopped it about 70 s after the app left the screen. **The Galaxy M31 did not freeze it in 4 or 5 minutes**, so this is not universal; whether it freezes later (spike 2 stalled for 15+ minutes) is untested. Treat a foreground service (or a user-initiated job, spike 9) as the safe design, and the link to the spike 2 stall as **unverified**.
 2. **Implement `onTimeout` from day one:** save progress, call `stopSelf()` immediately (the deadline observed was 10 s), post a "backup paused, tap to continue" notification, and resume when the user opens the app.
 3. **A first backup that takes days cannot be fully automatic.** On Android 15+ it pauses after about 6 hours in the background and only continues once the user opens the app. Onboarding and the status screen must say so plainly and show "paused, waiting for you" instead of a misleading "backing up" (honesty invariants 1 and 2). A WorkManager or user-initiated-job fallback is a design question for Phase 2 and spike 9; WorkManager would be a new dependency and needs your approval.
 4. **Persist progress at every chunk or file boundary.** Saving after each chunk made kill-and-resume lose nothing; the cost (a synchronous write per chunk) must be weighed against throughput in Phase 2.
 5. Treat a refused start from the background as a normal outcome, never a crash: catch it and show the paused state.
+
+
+## Galaxy M31 (Android 12), partial, 2026-10-28
+
+SM-M315F, Android 12 (no 6-hour limit exists here), wireless debugging, unplugged at 41 to 43%, 28.6 °C. Only the plain-thread baseline was run so far. The event logs of these two runs were overwritten by later runs, so the figures below come from the analyser output during the session and are **not** saved as files.
+
+| Run | Result |
+| --- | --- |
+| Plain thread, app in the background, **screen on**, 240 s | 1,099 ticks in 240.6 s = 4.57/s against 4.80/s in the foreground (95%). No freeze and no `freezing` line in the log. |
+| Plain thread, app in the background, **screen off** (via `adb`), 5 min | Ticks continued to the end (last tick 319 s after backgrounding, 1,359 ticks). 21 short gaps of 1.4 to 2.5 s in the first 30 s after the screen went off, then a steady rate of about 4.5/s. No freeze, no `freezing` line. |
+| Plain thread, screen off, **16 min** | **Aborted.** The owner woke the screen and took a phone call, so the run no longer matched its premise; stopped without waiting and its data discarded. |
+
+Reading: within 5 minutes this phone never froze the plain thread, unlike the emulator (70 s). So the freeze is not universal and the spike 2 stall (15+ minutes, cause unknown) is **not explained** by these runs.
+
+Still to run on the phone, when it is idle: the 16-minute screen-off baseline, the same job as a foreground service, and kill/resume.
 
 ## Not covered
 

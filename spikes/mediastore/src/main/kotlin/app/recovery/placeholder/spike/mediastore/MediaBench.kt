@@ -165,7 +165,7 @@ object MediaBench {
                 }.also { it.start() }
             }
         workers.forEach { it.join() }
-        val ms = (System.nanoTime() - start) / 1_000_000
+        val ms = maxOf(1L, (System.nanoTime() - start) / 1_000_000) // never 0: an empty file set must not divide by zero
         sampler.stopAndJoin()
         val mib = bytes.get() / 1048576.0
         return JSONObject()
